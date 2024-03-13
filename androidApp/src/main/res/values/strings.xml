@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="full_name_hint">FullName</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="signup_button_hint">SignUp</string>
+    <string name="login_button_hint">Login</string>
+
+    <string name="login_destination_title">Login</string>
+    <string name="signup_destination_title">SignUp</string>
+    <string name="no_destination_title" />
+    <string name="home_destination_title">Home</string>
+
+    <string name="default_error_message">Invalid Input</string>
+
+</resources>
