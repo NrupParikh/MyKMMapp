@@ -54,10 +54,11 @@ fun MyKmmAppNavigation(
     }
 
     // Launches a coroutine in the background to perform your desired side effect.
-    // Observe the token
+    // Observe the token value.
+    // When user click on logout, it observe the change and navigate to LoginScreen
     LaunchedEffect(key1 = token, block = {
 
-        if (token != null && token.isEmpty()){
+        if (token != null && token.isEmpty()) {
             navHostController.navigate(LoginDestination.route) {
                 popUpTo(HomeScreenDestination.route) {
                     inclusive = true
