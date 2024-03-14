@@ -3,14 +3,18 @@ package com.nrup.mykmmapp.android.auth.signup
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.datastore.core.DataStore
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.nrup.mykmmapp.android.common.datastore.UserSettings
+import com.nrup.mykmmapp.android.common.datastore.toUserSettings
 import com.nrup.mykmmapp.auth.domain.usecase.SignUpUseCase
 import com.nrup.mykmmapp.common.util.Result
 import kotlinx.coroutines.launch
 
 class SignUpViewModel(
-    private val signUpUseCase: SignUpUseCase
+    private val signUpUseCase: SignUpUseCase,
+    private val dataStore: DataStore<UserSettings>
 ) : ViewModel() {
     var uiState by mutableStateOf(SignUpUiState())
         private set
@@ -34,6 +38,13 @@ class SignUpViewModel(
                 }
 
                 is Result.Success -> {
+
+                    // When Login success, we store API response to shared preference
+                    dataStore.updateData {
+                        authResultData.data!!.toUserSettings()
+                    }
+
+                    // Updating the flags
                     uiState.copy(
                         isAuthenticating = false,
                         authenticationSucceed = true

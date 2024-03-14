@@ -25,17 +25,18 @@ class SignInUseCase : KoinComponent {
             return Result.Error(
                 message = "Please enter valid email"
             )
-        }
-        if (password.isBlank()) {
+        } else if (password.isBlank()) {
             return Result.Error(
                 message = "Please enter password"
             )
 
         } else if (password.length < 6) {
             return Result.Error(
-                message = "Please must be more than 6 letter"
+                message = "password must be more than 6 letter"
             )
+        } else {
+            return repository.signIn(email, password)
         }
-        return repository.signIn(email, password)
+
     }
 }

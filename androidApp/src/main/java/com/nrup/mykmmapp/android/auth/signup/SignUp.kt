@@ -1,14 +1,14 @@
 package com.nrup.mykmmapp.android.auth.signup
 
 import androidx.compose.runtime.Composable
-import com.nrup.mykmmapp.android.destinations.HomeDestination
+import com.nrup.mykmmapp.android.destinations.HomeScreenDestination
 import com.nrup.mykmmapp.android.destinations.LoginDestination
 import com.nrup.mykmmapp.android.destinations.SignUPDestination
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import org.koin.androidx.compose.koinViewModel
 
-@Destination(start = true)
+@Destination
 @Composable
 fun SignUP(
     navigator: DestinationsNavigator
@@ -28,7 +28,7 @@ fun SignUP(
             }
         },
         onNavigateToHome = {
-            navigator.navigate(HomeDestination) {
+            navigator.navigate(HomeScreenDestination) {
                 popUpTo(SignUPDestination.route) {
                     inclusive = true
                 }

@@ -157,9 +157,9 @@ fun GoToSignup(
     onNavigateToSignup: () -> Unit
 ) {
     Row(modifier = modifier, horizontalArrangement = Arrangement.spacedBy(SmallSpacing)) {
-        Text(text = "Don't have an account?", style = MaterialTheme.typography.labelSmall)
+        Text(text = "Don't have an account?", style = MaterialTheme.typography.labelMedium)
         Text(text = "SignUp",
-            style = MaterialTheme.typography.labelSmall,
+            style = MaterialTheme.typography.labelMedium,
             color = MaterialTheme.colorScheme.primary,
             modifier = modifier.clickable { onNavigateToSignup() })
     }

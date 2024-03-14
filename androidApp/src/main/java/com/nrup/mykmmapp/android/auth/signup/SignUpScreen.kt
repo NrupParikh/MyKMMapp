@@ -148,10 +148,10 @@ fun GoToLogin(
             SmallSpacing
         )
     ) {
-        Text(text = "Have already an account?", style = MaterialTheme.typography.labelSmall)
+        Text(text = "Have already an account?", style = MaterialTheme.typography.labelMedium)
         Text(
             text = "Login",
-            style = MaterialTheme.typography.labelSmall,
+            style = MaterialTheme.typography.labelMedium,
             color = MaterialTheme.colorScheme.primary,
             modifier = modifier.clickable { onNavigateToLogin() }
         )

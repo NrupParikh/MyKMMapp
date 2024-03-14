@@ -3,7 +3,7 @@
     <string name="full_name_hint">FullName</string>
     <string name="email_hint">Email</string>
     <string name="password_hint">Password</string>
-    <string name="signup_button_hint">SignUp</string>
+    <string name="signup_button_hint">Create account</string>
     <string name="login_button_hint">Login</string>
 
     <string name="login_destination_title">Login</string>

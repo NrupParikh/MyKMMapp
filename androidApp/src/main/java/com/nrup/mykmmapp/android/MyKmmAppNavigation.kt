@@ -11,14 +11,14 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.nrup.mykmmapp.android.common.components.AppBar
-import com.nrup.mykmmapp.android.destinations.HomeDestination
+import com.nrup.mykmmapp.android.destinations.HomeScreenDestination
 import com.nrup.mykmmapp.android.destinations.LoginDestination
 
 import com.ramcosta.composedestinations.DestinationsNavHost
 
 @Composable
 fun MyKmmAppNavigation(
-//    token: String?
+    token: String?
 ) {
     val navHostController = rememberNavController()
 //    val scaffoldState = rememberScaffoldState()
@@ -53,14 +53,16 @@ fun MyKmmAppNavigation(
         )
     }
 
-//    // Launches a coroutine in the background to perform your desired side effect.
-//    LaunchedEffect(key1 = token, block = {
-//        if (token != null && token.isEmpty()) {
-//            navHostController.navigate(LoginDestination.route) {
-//                popUpTo(HomeDestination.route) {
-//                    inclusive = true
-//                }
-//            }
-//        }
-//    })
+    // Launches a coroutine in the background to perform your desired side effect.
+    // Observe the token
+    LaunchedEffect(key1 = token, block = {
+
+        if (token != null && token.isEmpty()){
+            navHostController.navigate(LoginDestination.route) {
+                popUpTo(HomeScreenDestination.route) {
+                    inclusive = true
+                }
+            }
+        }
+    })
 }
