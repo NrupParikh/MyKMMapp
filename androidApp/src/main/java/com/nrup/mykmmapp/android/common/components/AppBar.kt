@@ -18,7 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.nrup.mykmmapp.android.R
-import com.nrup.mykmmapp.android.destinations.HomeScreenDestination
+import com.nrup.mykmmapp.android.destinations.HomeDestination
 import com.nrup.mykmmapp.android.destinations.LoginDestination
 import com.nrup.mykmmapp.android.destinations.SignUPDestination
 import com.ramcosta.composedestinations.utils.currentDestinationAsState
@@ -46,7 +46,7 @@ fun AppBar(
             },
             modifier = modifier,
             actions = {
-                androidx.compose.animation.AnimatedVisibility(visible = currentDestination?.route == HomeScreenDestination.route) {
+                androidx.compose.animation.AnimatedVisibility(visible = currentDestination?.route == HomeDestination.route) {
                     IconButton(onClick = {
                         showDialog.value = true
                     }) {
@@ -83,7 +83,7 @@ private fun getAppBarTitle(currentDestinationRoute: String?): Int {
     return when (currentDestinationRoute) {
         LoginDestination.route -> R.string.login_destination_title
         SignUPDestination.route -> R.string.signup_destination_title
-        HomeScreenDestination.route -> R.string.home_destination_title
+        HomeDestination.route -> R.string.home_destination_title
         else -> R.string.no_destination_title
     }
 }
@@ -91,7 +91,7 @@ private fun getAppBarTitle(currentDestinationRoute: String?): Int {
 private fun shouldShowNavigationIcon(currentDestinationRoute: String?): Boolean {
     return !(currentDestinationRoute == LoginDestination.route
             || currentDestinationRoute == SignUPDestination.route
-            || currentDestinationRoute == HomeScreenDestination.route
+            || currentDestinationRoute == HomeDestination.route
             || currentDestinationRoute == null
             )
 }

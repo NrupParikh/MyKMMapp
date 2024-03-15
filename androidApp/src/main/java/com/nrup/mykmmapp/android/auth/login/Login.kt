@@ -1,7 +1,7 @@
 package com.nrup.mykmmapp.android.auth.login
 
 import androidx.compose.runtime.Composable
-import com.nrup.mykmmapp.android.destinations.HomeScreenDestination
+import com.nrup.mykmmapp.android.destinations.HomeDestination
 import com.nrup.mykmmapp.android.destinations.LoginDestination
 import com.nrup.mykmmapp.android.destinations.SignUPDestination
 import com.ramcosta.composedestinations.annotation.Destination
@@ -20,7 +20,7 @@ fun Login(
         onPasswordChange = viewModel::updatePassword,
         onSignInClick   = viewModel::signIn,
         onNavigateToHome = {
-            navigator.navigate(HomeScreenDestination) {
+            navigator.navigate(HomeDestination) {
                 popUpTo(LoginDestination.route) {
                     inclusive = true
                 }

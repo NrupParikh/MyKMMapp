@@ -6,6 +6,7 @@ import com.nrup.mykmmapp.android.MainActivityViewModel
 import com.nrup.mykmmapp.android.auth.login.LoginViewModel
 import com.nrup.mykmmapp.android.auth.signup.SignUpViewModel
 import com.nrup.mykmmapp.android.common.datastore.UserSettingsSerializer
+import com.nrup.mykmmapp.android.home.HomeScreenViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -13,7 +14,7 @@ import org.koin.dsl.module
 val appModule = module {
     viewModel { LoginViewModel(get(),get()) }
     viewModel { SignUpViewModel(get(),get()) }
-//    viewModel { HomeScreenViewModel() }
+    viewModel { HomeScreenViewModel(get()) }
     viewModel { MainActivityViewModel(get()) }
 
     // Creating Single Instance of our Shared Preference

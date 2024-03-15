@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.nrup.mykmmapp.android.common.components.AppBar
-import com.nrup.mykmmapp.android.destinations.HomeScreenDestination
+import com.nrup.mykmmapp.android.destinations.HomeDestination
 import com.nrup.mykmmapp.android.destinations.LoginDestination
 
 import com.ramcosta.composedestinations.DestinationsNavHost
@@ -60,7 +60,7 @@ fun MyKmmAppNavigation(
 
         if (token != null && token.isEmpty()) {
             navHostController.navigate(LoginDestination.route) {
-                popUpTo(HomeScreenDestination.route) {
+                popUpTo(HomeDestination.route) {
                     inclusive = true
                 }
             }
