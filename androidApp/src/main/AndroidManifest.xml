@@ -8,10 +8,12 @@
         android:label="MyKmmApp"
         android:allowBackup="false"
         android:supportsRtl="true"
+        android:icon="@mipmap/ic_launcher"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
             android:name=".MainActivity"
+            android:theme="@style/MySplash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
