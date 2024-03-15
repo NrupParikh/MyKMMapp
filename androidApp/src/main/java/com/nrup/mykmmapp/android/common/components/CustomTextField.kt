@@ -48,7 +48,7 @@ fun CustomTextField(
         value = value,
         onValueChange = onValueChange,
         modifier = modifier.fillMaxWidth(),
-        textStyle = MaterialTheme.typography.bodySmall,
+        textStyle = MaterialTheme.typography.bodyMedium,
         keyboardOptions = KeyboardOptions.Default.copy(
             keyboardType = keyboardType
         ),
@@ -107,9 +107,21 @@ fun PasswordEyeIcon(
 
 }
 
-@Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
+@Preview()
 @Composable
-fun CustomTextFieldPreview() {
+fun CustomTextFieldPreviewInLightMode() {
+    MyAppTheme {
+        CustomTextField(
+            value = "Hello",
+            onValueChange = {},
+            hint = R.string.default_error_message
+        )
+    }
+}
+
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+fun CustomTextFieldPreviewInDarkMode() {
     MyAppTheme {
         CustomTextField(
             value = "Hello",
