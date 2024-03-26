@@ -33,6 +33,7 @@ class SignUpViewModel(
                 is Result.Error -> {
                     uiState.copy(
                         isAuthenticating = false,
+                        authenticationSucceed = false,
                         authErrorMessage = authResultData.message
                     )
                 }
@@ -47,7 +48,8 @@ class SignUpViewModel(
                     // Updating the flags
                     uiState.copy(
                         isAuthenticating = false,
-                        authenticationSucceed = true
+                        authenticationSucceed = true,
+                        authErrorMessage = null
                     )
                 }
             }
